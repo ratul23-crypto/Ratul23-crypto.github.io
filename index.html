@@ -1,188 +1,195 @@
-c<!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Ratul - Web Developer</title>
-
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background: #f2f4f8;
-            color: #222;
-        }
-
-        header {
-            background: #111827;
-            color: white;
-            text-align: center;
-            padding: 60px 20px;
-        }
-
-        header h1 {
-            font-size: 45px;
-            margin-bottom: 10px;
-        }
-
-        header p {
-            font-size: 20px;
-        }
-
-        nav {
-            background: white;
-            text-align: center;
-            padding: 18px;
-        }
-
-        nav a {
-            color: #111827;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-        }
-
-        section {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 20px;
-        }
-
-        .about {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            text-align: center;
-        }
-
-        .about h2,
-        .skills h2,
-        .contact h2 {
-            margin-bottom: 15px;
-            font-size: 30px;
-        }
-
-        .cards {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .card {
-            background: white;
-            width: 250px;
-            padding: 30px;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 5px 15px #0002;
-        }
-
-        .card h3 {
-            margin-bottom: 10px;
-            color: #2563eb;
-        }
-
-        .contact {
-            background: #2563eb;
-            color: white;
-            text-align: center;
-            padding: 40px;
-            border-radius: 15px;
-        }
-
-        .contact a {
-            display: inline-block;
-            margin-top: 15px;
-            background: white;
-            color: #2563eb;
-            padding: 12px 25px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        footer {
-            text-align: center;
-            background: #111827;
-            color: white;
-            padding: 20px;
-            margin-top: 40px;
-        }
-
-        @media (max-width: 600px) {
-            header h1 {
-                font-size: 35px;
-            }
-
-            nav a {
-                display: inline-block;
-                margin: 8px;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="Student Tools BD - Free calculators and useful study tools for students.">
+<meta name="keywords" content="student tools, GPA calculator, percentage calculator, age calculator, study timer, unit converter, Bangladesh students">
+<meta name="theme-color" content="#5b5ce2">
+<title>Student Tools BD — Free Student Tools</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--p:#5b5ce2;--p2:#795cff;--dark:#111827;--text:#1d2638;--muted:#687386;--bg:#f6f7fb;--card:#fff;--line:#e7e9f0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,-apple-system,Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.55}
+a{text-decoration:none;color:inherit}
+.nav{height:72px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 6%;position:sticky;top:0;z-index:20}
+.logo{font-weight:900;font-size:20px}.logo b{color:var(--p)}
+.navlinks{display:flex;gap:26px;font-weight:650;color:#566174}.navlinks a:hover{color:var(--p)}
+.hero{padding:78px 6% 85px;display:grid;grid-template-columns:1.25fr .75fr;gap:50px;align-items:center;background:linear-gradient(135deg,#f8f9ff,#eef0ff)}
+.tag{color:var(--p);font-size:12px;letter-spacing:2px;font-weight:900;margin-bottom:12px}
+h1{font-size:clamp(42px,6vw,72px);line-height:1.02;letter-spacing:-3px;margin-bottom:20px}
+h1 span{color:var(--p)}
+.hero p.desc{font-size:18px;color:var(--muted);max-width:600px;margin-bottom:28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:12px;padding:13px 20px;background:linear-gradient(135deg,var(--p),var(--p2));color:#fff;font-weight:800;cursor:pointer;box-shadow:0 10px 25px #5b5ce225}
+.hero-box{background:#fff;border:1px solid var(--line);border-radius:28px;padding:38px;text-align:center;box-shadow:0 25px 70px #28356a16}
+.hero-box .big{font-size:70px}.hero-box h3{font-size:24px;margin:10px 0 4px}.hero-box p{color:var(--muted)}
+.section{padding:80px 6%}.heading{text-align:center;margin-bottom:40px}.heading h2{font-size:40px;line-height:1.1;margin-bottom:7px}.heading p{color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;box-shadow:0 8px 30px #26335a08}
+.icon{font-size:32px}.card h3{font-size:20px;margin:8px 0 3px}.card>p{color:var(--muted);font-size:14px;margin-bottom:16px}
+input,select{width:100%;padding:12px;border:1px solid #dce0e9;border-radius:10px;background:#fff;font-size:15px;margin-bottom:10px;outline:none}
+input:focus,select:focus{border-color:var(--p)}
+button{width:100%;border:0;border-radius:10px;padding:12px;background:linear-gradient(135deg,var(--p),var(--p2));color:white;font-weight:800;cursor:pointer}
+button.alt{background:#eef0f5;color:#30394b}
+.result{margin-top:11px;min-height:42px;padding:10px;border-radius:10px;background:#f2f3ff;color:#343b55;font-size:14px}
+.timer{font-size:44px;text-align:center;font-weight:900;color:var(--p);padding:7px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:8px}.row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+.tools-note{text-align:center;margin:35px auto 0;max-width:650px;color:var(--muted);font-size:14px}
+.about{background:#fff}.about-grid{display:grid;grid-template-columns:1fr 1.5fr;gap:60px;align-items:start}.features{display:grid;gap:15px}.feature{padding:18px;border:1px solid var(--line);border-radius:15px}.feature b{display:block;margin-bottom:3px}.feature span{font-size:14px;color:var(--muted)}
+footer{background:#101624;color:white;padding:38px 6%;text-align:center}footer p{color:#aeb7c7;font-size:13px;margin-top:5px}
+.adbox{max-width:900px;margin:0 auto 30px;border:1px dashed #cfd3de;border-radius:15px;padding:22px;text-align:center;color:#9aa2b1;font-size:12px}
+@media(max-width:850px){.hero{grid-template-columns:1fr;text-align:center}.hero p.desc{margin-left:auto;margin-right:auto}.hero-box{max-width:390px;margin:auto}.grid{grid-template-columns:1fr 1fr}.about-grid{grid-template-columns:1fr}}
+@media(max-width:560px){.nav{padding:0 5%}.navlinks{gap:12px}.navlinks a:nth-child(n+2){display:none}.hero,.section{padding-left:5%;padding-right:5%}.grid{grid-template-columns:1fr}.heading h2{font-size:32px}h1{letter-spacing:-2px}}
+</style>
 </head>
-
 <body>
 
-    <header>
-        <h1>Hi, I'm Ratul 👋</h1>
-        <p>I'm Learning Web Development</p>
-    </header>
+<header class="nav">
+  <a class="logo" href="#home">🎓 Student Tools <b>BD</b></a>
+  <nav class="navlinks">
+    <a href="#home">Home</a><a href="#tools">Tools</a><a href="#about">About</a>
+  </nav>
+</header>
 
-    <nav>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
-    </nav>
+<main>
+<section class="hero" id="home">
+  <div>
+    <div class="tag">FREE • SIMPLE • STUDENT FRIENDLY</div>
+    <h1>Useful tools for<br><span>every student.</span></h1>
+    <p class="desc">Calculate, convert and manage your study life with simple, fast and free tools made for students.</p>
+    <a class="btn" href="#tools">Explore Tools ↓</a>
+  </div>
+  <div class="hero-box">
+    <div class="big">📚</div>
+    <h3>Study smarter</h3>
+    <p>Free tools. Quick answers. More features coming soon.</p>
+  </div>
+</section>
 
-    <section id="about">
-        <div class="about">
-            <h2>About Me</h2>
-            <p>
-                Hello! My name is Ratul.
-                I am learning HTML, CSS and JavaScript.
-                My goal is to become a professional web developer.
-            </p>
-        </div>
-    </section>
+<section class="section" id="tools">
+  <div class="heading">
+    <div class="tag">OUR TOOLKIT</div>
+    <h2>Student Tools</h2>
+    <p>Choose a tool and get your result instantly.</p>
+  </div>
 
-    <section id="skills" class="skills">
-        <h2 style="text-align:center;">My Skills</h2>
+  <div class="adbox">Advertisement space — ready for future monetization</div>
 
-        <div class="cards">
+  <div class="grid">
 
-            <div class="card">
-                <h3>HTML</h3>
-                <p>I can create the structure of websites.</p>
-            </div>
+    <article class="card">
+      <div class="icon">📊</div><h3>Percentage Calculator</h3>
+      <p>Find what percentage one number is of another.</p>
+      <div class="row"><input id="pv" type="number" placeholder="Value"><input id="pt" type="number" placeholder="Total"></div>
+      <button onclick="percentage()">Calculate</button>
+      <div class="result" id="pr">Your result will appear here.</div>
+    </article>
 
-            <div class="card">
-                <h3>CSS</h3>
-                <p>I can design and style websites.</p>
-            </div>
+    <article class="card">
+      <div class="icon">🎂</div><h3>Age Calculator</h3>
+      <p>Calculate your exact age from your birth date.</p>
+      <input id="dob" type="date">
+      <button onclick="age()">Calculate Age</button>
+      <div class="result" id="ar">Your age will appear here.</div>
+    </article>
 
-            <div class="card">
-                <h3>JavaScript</h3>
-                <p>I'm going to learn interactive websites.</p>
-            </div>
+    <article class="card">
+      <div class="icon">⏱️</div><h3>Study Timer</h3>
+      <p>Use a simple 25-minute focus session.</p>
+      <div class="timer" id="tm">25:00</div>
+      <div class="row"><button onclick="startTimer()">Start</button><button class="alt" onclick="resetTimer()">Reset</button></div>
+    </article>
 
-        </div>
-    </section>
+    <article class="card">
+      <div class="icon">🎓</div><h3>GPA Calculator</h3>
+      <p>Calculate your GPA from subject grades.</p>
+      <div class="row">
+        <select id="g1"><option value="5">A+ (5.00)</option><option value="4">A (4.00)</option><option value="3.5">A- (3.50)</option><option value="3">B (3.00)</option><option value="2">C (2.00)</option><option value="1">D (1.00)</option><option value="0">F (0.00)</option></select>
+        <select id="g2"><option value="5">A+ (5.00)</option><option value="4">A (4.00)</option><option value="3.5">A- (3.50)</option><option value="3">B (3.00)</option><option value="2">C (2.00)</option><option value="1">D (1.00)</option><option value="0">F (0.00)</option></select>
+      </div>
+      <div class="row">
+        <select id="g3"><option value="5">A+ (5.00)</option><option value="4">A (4.00)</option><option value="3.5">A- (3.50)</option><option value="3">B (3.00)</option><option value="2">C (2.00)</option><option value="1">D (1.00)</option><option value="0">F (0.00)</option></select>
+        <select id="g4"><option value="5">A+ (5.00)</option><option value="4">A (4.00)</option><option value="3.5">A- (3.50)</option><option value="3">B (3.00)</option><option value="2">C (2.00)</option><option value="1">D (1.00)</option><option value="0">F (0.00)</option></select>
+      </div>
+      <button onclick="gpa()">Calculate GPA</button>
+      <div class="result" id="gr">Select grades and calculate.</div>
+    </article>
 
-    <section id="contact">
-        <div class="contact">
-            <h2>Contact Me</h2>
-            <p>Want to work with me?</p>
+    <article class="card">
+      <div class="icon">📐</div><h3>Unit Converter</h3>
+      <p>Convert common length units quickly.</p>
+      <input id="uv" type="number" placeholder="Enter value">
+      <div class="row"><select id="uf"><option value="m">Meter</option><option value="km">Kilometer</option><option value="cm">Centimeter</option><option value="ft">Feet</option></select><select id="ut"><option value="m">Meter</option><option value="km">Kilometer</option><option value="cm">Centimeter</option><option value="ft">Feet</option></select></div>
+      <button onclick="convert()">Convert</button>
+      <div class="result" id="ur">Your conversion will appear here.</div>
+    </article>
 
-            <a href=https://www.facebook.com/md.ratiul.islam.151427">
-                Email Me
-            </a>
-        </div>
-    </section>
+    <article class="card">
+      <div class="icon">💰</div><h3>Simple Discount</h3>
+      <p>Calculate sale price after a discount.</p>
+      <input id="price" type="number" placeholder="Original price">
+      <input id="discount" type="number" placeholder="Discount %">
+      <button onclick="discount()">Calculate</button>
+      <div class="result" id="dr">Your final price will appear here.</div>
+    </article>
+
+  </div>
+  <p class="tools-note">More student tools can be added here later, including HSC/SSC calculators, CGPA, BMI, currency conversion and more.</p>
+</section>
+
+<section class="section about" id="about">
+  <div class="about-grid">
+    <div><div class="tag">ABOUT US</div><h2>Simple tools.<br>Less hassle.</h2></div>
+    <div class="features">
+      <div class="feature"><b>⚡ Fast</b><span>Calculations happen directly in your browser.</span></div>
+      <div class="feature"><b>📱 Mobile Friendly</b><span>Designed to work on phones, tablets and laptops.</span></div>
+      <div class="feature"><b>🆓 Free</b><span>Useful student tools without unnecessary complexity.</span></div>
+      <div class="feature"><b>🚀 Growing</b><span>New tools and educational resources can be added over time.</span></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <strong>🎓 Student Tools BD</strong>
+  <p>Useful tools for students • © 2026 Student Tools BD</p>
+</footer>
+
+<script>
+function percentage(){
+ const v=parseFloat(document.getElementById('pv').value),t=parseFloat(document.getElementById('pt').value);
+ document.getElementById('pr').textContent=(!isFinite(v)||!isFinite(t)||t===0)?'Please enter valid numbers.':((v/t)*100).toFixed(2)+'%';
+}
+function age(){
+ const s=document.getElementById('dob').value,r=document.getElementById('ar');
+ if(!s){r.textContent='Please select your birth date.';return}
+ const d=new Date(s+'T00:00:00'),n=new Date();
+ if(d>n){r.textContent='Birth date cannot be in the future.';return}
+ let y=n.getFullYear()-d.getFullYear(),m=n.getMonth()-d.getMonth(),day=n.getDate()-d.getDate();
+ if(day<0){m--;day+=new Date(n.getFullYear(),n.getMonth(),0).getDate()}
+ if(m<0){y--;m+=12}
+ r.textContent=`${y} years, ${m} months, ${day} days`;
+}
+function gpa(){
+ const a=['g1','g2','g3','g4'].map(id=>+document.getElementById(id).value);
+ document.getElementById('gr').textContent='GPA: '+(a.reduce((x,y)=>x+y,0)/a.length).toFixed(2);
+}
+const base={m:1,km:1000,cm:.01,ft:.3048};
+function convert(){
+ const v=parseFloat(document.getElementById('uv').value),f=document.getElementById('uf').value,t=document.getElementById('ut').value;
+ document.getElementById('ur').textContent=(!isFinite(v))?'Please enter a value.':(v*base[f]/base[t]).toFixed(6).replace(/\.?0+$/,'')+' '+t;
+}
+function discount(){
+ const p=parseFloat(document.getElementById('price').value),d=parseFloat(document.getElementById('discount').value);
+ document.getElementById('dr').textContent=(!isFinite(p)||!isFinite(d))?'Please enter valid numbers.':`Final price: ${(p-(p*d/100)).toFixed(2)} | You save: ${(p*d/100).toFixed(2)}`;
+}
+let sec=1500,interval=null;
+function draw(){document.getElementById('tm').textContent=String(Math.floor(sec/60)).padStart(2,'0')+':'+String(sec%60).padStart(2,'0')}
+function startTimer(){if(interval)return;interval=setInterval(()=>{if(sec<=0){clearInterval(interval);interval=null;alert('Study session complete! 🎉');return}sec--;draw()},1000)}
+function resetTimer(){clearInterval(interval);interval=null;sec=1500;draw()}
+draw();
+</script>
 
     <footer>
         <p>© 2026 Ratul. All Rights Reserved.</p>
